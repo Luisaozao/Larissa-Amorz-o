@@ -1,0 +1,143 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #f9f9f9;
+}
+
+
+.hero {
+    text-align: center;
+}
+
+.hero-img {
+    max-width: 100px;
+    height: auto;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 10px;
+}
+
+.gallery-item img {
+    max-width: 300px;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: oblique;
+}
+
+.hogwarts {
+    position: absolute; /* Posiciona o background de forma absoluta */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca o fundo atrás de outros conteúdos */
+}
+
+.hogwarts {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem cobrir todo o container sem distorcer */
+}
+
+.gallery-item img {
+
+    object-fit: cover; /* Faz com que a imagem cubra o contêiner sem distorção */
+    border-radius: 8px; /* Arredonda os cantos da imagem */
+    overflow: hidden; /* Garante que nenhuma parte da imagem saia do contêiner */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de zoom */
+}
+
+/* Adiciona o efeito de zoom quando o mouse passa sobre a imagem */
+.gallery-item img:hover {
+    transform: scale(1.2); /* Aumenta a imagem em 10% */
+}
+
+/* Define o tamanho da imagem de fundo e impede o conteúdo de ultrapassar */
+.background-container {
+    position: relative; /* Necessário para o posicionamento absoluto do fundo */
+    max-width: 100%; /* Garante que o container não exceda a largura da tela */
+    max-height: 100vh; /* Limita a altura do container à altura da janela de visualização */
+    overflow: hidden; /* Garante que o conteúdo não ultrapasse o container */
+    display: flex;
+    flex-direction: column; /* Alinha o conteúdo na coluna */
+}
+
+.background-container img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Faz a imagem cobrir todo o container */
+}
+
+/* Estilos para o restante do conteúdo */
+main {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo esteja acima do fundo */
+    padding: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Remove rolagem horizontal */
+}
+
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Evita que os balões interceptem eventos de clique */
+    overflow: hidden;
+    z-index: 1; /* Fica acima do conteúdo principal, mas abaixo do coração */
+}
+
+/* Estilo para os balões */
+.balloon {
+    position: absolute;
+    width: 90px;
+    height: 70px;
+    background: url('imagem/balões.png') no-repeat center center; /* Imagem do balão */
+    background-size: cover;
+    opacity: 0;
+    pointer-events: none;
+    animation: float 5s ease-in forwards; /* Animação do balão */
+}
+
+@keyframes float {
+    from {
+        transform: translateY(100vh); /* Inicia fora da tela */
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh); /* Move para fora da tela */
+        opacity: 0;
+    }
+}
